@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\articleController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\uploadImageController;
 /*
@@ -20,4 +21,5 @@ Route::get('/', function () {
 Route::get('/image-upload-form', [uploadImageController::class, 'showImageForm']);
 Route::post('/upload-image', [uploadImageController::class, 'uploadImage'])->name('upload.image');
 
-Route::get('/articles',[articleController::class,'index']);
+// Route::get('/articles',[articleController::class,'index']);
+Route::get('/',[PageController::class,'index']);
