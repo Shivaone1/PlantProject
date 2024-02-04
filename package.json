@@ -25,6 +25,11 @@
       "react-app/jest"
     ]
   },
+  "autoload": {
+      "files": [
+          "app/Helpers/Helper.php"
+      ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",

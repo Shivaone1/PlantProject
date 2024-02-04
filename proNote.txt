@@ -12,3 +12,13 @@ To https://github.com/Shivaone1/PlantProject.git
  * [new branch]      main -> main
 branch 'main' set up to track 'origin/main'.
 -------------------------------------------------
+-------Create Helper------
+mkdir app/Helpers
+composer.json // in 
+"autoload": {
+    "files": [
+        "app/Helpers/Helper.php"
+        "config/constant.php"
+    ],
+},
+composer dump-autoload

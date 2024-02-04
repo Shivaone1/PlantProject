@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 class PageController extends Controller
 {
     public function index()
@@ -17,5 +16,6 @@ class PageController extends Controller
 
         $ymd = convertMdyToYmd('04-04-2024');
         var_dump('Convert to "YMD" : ' . $ymd);
+        return response()->json(['Status'=>true,'Message'=>DATA_STORE]);
     }
 }
