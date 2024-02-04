@@ -1,8 +1,8 @@
 <?php
-define('DATA_STORE', 'Data Save Successfully...');
+define('DATA_STORE', 'Data Save Successfully');
 
 return [
-    'DATA_STORE' => 'Data Save Successfully...',
+    'DATA_STORE' => 'Data Save Successfully',
     'DATA_REJECTED' => 'Failed Your Storing Data...',
     'SUCCESS' => 200,
     'REDIRECTION' => 302,
