@@ -9,7 +9,8 @@ class PageController extends Controller
     public function index()
     {
         $data = Category::orderByDesc('id')->get();
-        return view('UI/index',compact('data'));
+        return response()->json(['Status'=>true,'Message'=>DATA_FETCHED,'Data'=>$data],200);
+        // return view('UI/index',compact('data'));
     }
 
     // public function contertDate()
