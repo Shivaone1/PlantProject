@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\productObjectController;
 use App\Http\Controllers\uploadImageController;
 use Illuminate\Http\Request;
@@ -22,3 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('productObject',[productObjectController::class,'projectObjectdata']);
 Route::post('uploadImage',[uploadImageController::class,'uploadImage']);
 Route::get('getImage',[uploadImageController::class,'getImage']);
+
+Route::get('index',[PageController::class,'index']);

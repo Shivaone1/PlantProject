@@ -13,13 +13,16 @@
             </tr>
         </thead>
         <tbody>
+            @php $s=1 @endphp
+            @foreach($data as $row)
             <tr>
-                <td>#</td>
-                <td>name</td>
+                <td>{{ $s++}}</td>
+                <td>{{ $row->title}}</td>
                 <td>mobile</td>
                 <td>city</td>
                 <td>action</td>
             </tr>
+            @endforeach
         </tbody>
     </table>
 </div>

@@ -5,6 +5,8 @@ import Product from './Product';
 import UploadImage from './UploadImage';
 import Error from "./Error";
 import ProductList from './ProductList';
+import Category from './Category';
+import Index from './Index';
 
 export default function App() {
   return (
@@ -12,10 +14,11 @@ export default function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          {/* <Route path="/home" element={<Home />} /> */}
+          <Route path="/Home" element={<Index />} />
           <Route path="/Product" element={<Product />} />
           <Route path="/uploadImage" element={<UploadImage />} />
           <Route path="/ProductList" element={<ProductList />}/>
+          <Route path="/CategoryList" element={<Category />}/>
           <Route path="/*" element={<Error />} />
         </Routes>
       </BrowserRouter>
