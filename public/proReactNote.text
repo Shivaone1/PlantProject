@@ -1,0 +1,22 @@
+
+
+export default function Category() {
+    const [category, setCategory] = useState({
+        name: 'shiva',
+        mobile: 9849302233,
+        city: 'Noida'
+    });
+   
+    useEffect(()=>{
+        const fetchData=async()=>{
+            try {
+                const response=await fetch('');
+                const data=await response.json();
+                setCategory(data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+        fetchData();
+    },[])
+}

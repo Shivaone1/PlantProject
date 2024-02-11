@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('plants', function (Blueprint $table) {
             $table->id();
+            $table->string('plant')->nullable();
+            // $table->unsignedBigInteger('category_id');
+            // $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->string('color')->nullable();
             $table->timestamps();
         });
     }
