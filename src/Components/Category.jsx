@@ -29,20 +29,24 @@ export default function Category() {
 
     return (
         <>
-            <h1>Category List</h1>
             <div className="container">
+                <h1 className='text-center'>Category List</h1>
                 <div className="table">
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Title</th>
+                            <th>Date</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {category && category.map((item, index) => (
                             <tr>
-                                <td key={index}>{index+1}</td>
+                                <td key={index}>{index + 1}</td>
                                 <td>{item.title}</td>
+                                <td>{new Date(item.created_at).toLocaleDateString('en-IN')}</td>
+                                <td><i className="btn btn-success fa fa-eye">View</i> <i className="btn btn-danger fa fa-trash">Delete</i></td>
                             </tr>
                         ))}
                     </tbody>
