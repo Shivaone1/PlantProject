@@ -25,3 +25,4 @@ Route::post('uploadImage',[uploadImageController::class,'uploadImage']);
 Route::get('getImage',[uploadImageController::class,'getImage']);
 
 Route::get('index',[PageController::class,'index']);
+Route::get('category',[PageController::class,'getCategory']);

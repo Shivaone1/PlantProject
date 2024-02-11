@@ -7,7 +7,7 @@ export default function Category() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8000/api/index');
+                const response = await fetch('http://127.0.0.1:8000/api/category');
                 if (!response.ok) {
                     throw new Error('Failed to fetch data');
                 }
@@ -31,9 +31,22 @@ export default function Category() {
         <>
             <h1>Category List</h1>
             <div className="container">
-                {category && category.map((item, index) => (
-                    <p key={index}>Name: {item.title}</p>
-                ))}
+                <div className="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {category && category.map((item, index) => (
+                            <tr>
+                                <td key={index}>{index+1}</td>
+                                <td>{item.title}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </div>
             </div>
         </>
     )
