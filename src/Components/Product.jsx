@@ -2,24 +2,24 @@ import React, { useState } from 'react';
 
 const Product = () => {
     const [formData, setFormData] = useState({
-        plant_id: '1',
-        section_id: '1',
-        subsection_id: '1',
-        equipment_id: '1',
-        category_id: '1',
-        subcategory_id: '1',
-        description: '1',
-        equipment: '1',
-        version: '1',
-        checksheettype: '1',
-        create_by: '1',
-        checkpoints: [1,1,1,1],
-        spareParts: [],
+        plant_id: '',
+        section_id: '',
+        subsection_id: '',
+        equipment_id: '',
+        category_id: '',
+        subcategory_id: '',
+        description: '',
+        equipment: '',
+        version: '',
+        checksheettype: '',
+        create_by: '',
+        // checkpoints: [],
+        // spareParts: [],
     });
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData((prevData) => ({ ...prevData, [name]: value }));
+        setFormData((formData) => ({ ...formData, [name]: value }));
     };
 
     const handleCheckpointChange = (index, field, value) => {
@@ -42,10 +42,10 @@ const Product = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
+
         try {
             const formDataObj = new FormData();
-    
+
             for (const key in formData) {
                 if (key === 'checkpoints' || key === 'spareParts') {
                     formData[key].forEach((item, index) => {
@@ -61,12 +61,13 @@ const Product = () => {
                     formDataObj.append(key, formData[key]);
                 }
             }
-    
-            const response = await fetch('http://127.0.0.1:8000/api/productObject', {
+
+            const response = await fetch('http://127.0.0.1:8000/api/productObject/', {
                 method: 'POST',
                 body: formDataObj,
             });
-    
+
+
             if (response.ok) {
                 console.log('Form submitted successfully');
                 // Reset the form or perform any other actions
@@ -78,7 +79,7 @@ const Product = () => {
             console.error('Error during form submission:', error.message);
         }
     };
-    
+
 
     return (
         <>
@@ -142,7 +143,7 @@ const Product = () => {
                         </div>
                     </div>
 
-                    {formData.checkpoints.map((checkpoint, index) => (
+                    {/* {formData.checkpoints.map((checkpoint, index) => (
                         <div key={index} className='d-flex'>
                             <input className="m-1" type="text" name={`checkpoints[${index}].title`} value={checkpoint.title || ''} onChange={(e) => handleCheckpointChange(index, 'title', e.target.value)} placeholder="Checkpoint Title"/>
                             <input className="m-1" type="text" name={`checkpoints[${index}].std_value`} value={checkpoint.std_value || ''} onChange={(e) => handleCheckpointChange(index, 'std_value', e.target.value)} placeholder="Standard Value" />
@@ -151,9 +152,9 @@ const Product = () => {
                             <input className="m-1" type="text" name={`checkpoints[${index}].remark`} value={checkpoint.remark || ''} onChange={(e) => handleCheckpointChange(index, 'remark', e.target.value)} placeholder="Remark" />
                             <input className="m-1" type="file" name={`checkpoints[${index}].media`} onChange={(e) => handleCheckpointChange(index, 'media', e.target.files[0])}accept="image/*" />
                         </div>
-                    ))}
+                    ))} */}
 
-                    {formData.spareParts.map((sparePart, index) => (
+                    {/* {formData.spareParts.map((sparePart, index) => (
                         <div key={index} className='d-flex'>
                             <input className="m-1" type="text" name={`spareParts[${index}].spare_part`} value={sparePart.spare_part || ''} onChange={(e) => handleSparePartChange(index, 'spare_part', e.target.value)} placeholder="Spare Part" />
                             <input className="m-1" type="text" name={`spareParts[${index}].descriotion`} value={sparePart.descriotion || ''} onChange={(e) => handleSparePartChange(index, 'descriotion', e.target.value)} placeholder="descriotion" />
@@ -162,7 +163,7 @@ const Product = () => {
                             <input className="m-1" type="text" name={`spareParts[${index}].remark`} value={sparePart.remark || ''} onChange={(e) => handleSparePartChange(index, 'remark', e.target.value)} placeholder="remark" />
                             <input className="m-1" type="file" name={`spareParts[${index}].media`} onChange={(e) => handleSparePartChange(index, 'media', e.target.files[0])} accept="image/*" />
                         </div>
-                    ))}
+                    ))} */}
                     <button type="submit" className="form-control bg-success text-light mt-3 mb-5">Submit</button>
                 </form>
             </div>

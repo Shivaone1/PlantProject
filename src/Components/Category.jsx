@@ -31,7 +31,7 @@ export default function Category() {
         <>
             <div className="container">
                 <h1 className='text-center'>Category List</h1>
-                <div className="table">
+                <div className="table text-center">
                     <thead>
                         <tr>
                             <th>#</th>

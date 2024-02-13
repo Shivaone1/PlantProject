@@ -17,8 +17,8 @@ export default function App() {
           <Route path="/Home" element={<Index />} />
           <Route path="/Product" element={<Product />} />
           <Route path="/uploadImage" element={<UploadImage />} />
-          <Route path="/ProductList" element={<ProductList />}/>
-          <Route path="/CategoryList" element={<Category />}/>
+          <Route path="/ProductList" element={<ProductList />} />
+          <Route path="/CategoryList" element={<Category />} />
           <Route path="/*" element={<Error />} />
         </Routes>
       </BrowserRouter>
