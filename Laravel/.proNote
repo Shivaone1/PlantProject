@@ -30,3 +30,10 @@ php artisan db:seed --class=CategorySeeder
 
 php artisan migrate --path=\database\migrations\2024_02_10_175010_create_categories_table.php
 
+
+
+
+
+
+
+

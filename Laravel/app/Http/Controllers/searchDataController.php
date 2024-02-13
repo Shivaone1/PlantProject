@@ -15,7 +15,8 @@ class searchDataController extends Controller
             ->leftjoin('authors', 'authors.id', 'articles.fk_author_id')
             ->leftjoin('categories', 'categories.id', 'articles.fk_categories_id')
             ->get();
-        dd($articles);
+        // dd($articles);
         return view('article', ['articles' => $articles]);
     }
 }
+

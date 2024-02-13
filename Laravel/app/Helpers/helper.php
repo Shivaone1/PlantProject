@@ -25,14 +25,20 @@ function deleteImg($path)
     return 'Ok';
 }
 
-function notification($data)
+function responseData($data = '', $success = false, $message = "", $status = 201, $metadata = [])
 {
-    // $comment = new Comment(); /// Comment Is Model
-    // $comment->user_id = $data['user_id'];
-    // $comment->type = $data['type'];
-    // $comment->type_id = $data['type_id'];
-    // $comment->message = $data['message'];
-    // $comment->data = json_encode($data);
-    // $comment->save();
-    // return "success";
+    $response['success'] = $success;
+    $response['status'] = $status;
+    $response['message'] = $message;
+    $response['data'] = $data;
+    $response['metadata'] = $metadata;
+    return response()->json($response, $response['status']);
 }
+// function responseData($data = '', $success = false, $message = "", $status = 201, $headers = [])
+// {
+//     $response['success'] = $success;
+//     $response['status'] = $status;
+//     $response['message'] = $message;
+//     $response['data'] = $data;
+//     return response()->json($response, $response['status'])->withHeaders($headers);
+// }

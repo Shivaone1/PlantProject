@@ -31,4 +31,5 @@ class PageController extends Controller
     //     var_dump('Convert to "YMD" : ' . $ymd);
     //     return response()->json(['Status'=>true,'Message'=>DATA_STORE]);
     // }
+    
 }
