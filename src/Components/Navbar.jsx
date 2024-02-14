@@ -30,9 +30,6 @@ const Navbar = () => {
           <li className="nav-item">
             <Link className="nav-link" to="/uploadImage">Upload Image</Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/ProductList">Product List</Link>
-          </li>
         </ul>
       </div>
     </nav>

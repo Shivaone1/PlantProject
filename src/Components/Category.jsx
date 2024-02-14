@@ -26,12 +26,11 @@ export default function Category() {
         fetchData();
     }, []);
 
-
     return (
         <>
             <div className="container">
                 <h1 className='text-center'>Category List</h1>
-                <div className="table text-center">
+                <table className="table">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -50,7 +49,7 @@ export default function Category() {
                             </tr>
                         ))}
                     </tbody>
-                </div>
+                </table>
             </div>
         </>
     )
