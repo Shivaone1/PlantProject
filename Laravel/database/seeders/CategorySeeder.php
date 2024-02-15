@@ -15,6 +15,8 @@ class CategorySeeder extends Seeder
     public function run()
     {
         // factory(Category::class)->times(10)->create();
-        \App\Models\Category::factory(10)->create();
+        \App\Models\Category::create(['title' => 'Male']);
+        \App\Models\Category::create(['title' => 'Female']);
+        \App\Models\Category::create(['title' => 'Kids']);
     }
 }

@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\productObjectController;
 use App\Http\Controllers\uploadImageController;
 use Illuminate\Http\Request;
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +28,7 @@ Route::get('getImage',[uploadImageController::class,'getImage']);
 
 Route::get('index',[PageController::class,'index']);
 Route::get('category',[PageController::class,'getCategory']);
+Route::get('plant',[PageController::class,'getPlant']);
+Route::get('product',[PageController::class,'getProduct']);
+Route::get('searchProducts',[ProductController::class,'searchProducts']);
+// Route::get('/products/search/{keyword}', 'ProductController@searchProducts');

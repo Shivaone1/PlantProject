@@ -7,11 +7,9 @@ export default function Product() {
     useEffect(() => {
         const newData = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8000/api/category');
+                const response = await fetch('http://127.0.0.1:8000/api/product');
                 const responseData = await response.json();
-                // console.log(responseData.Data[0]);
-                // console.log(Array.isArray(responseData.Data));
-                setData(responseData.Data)
+                setData(responseData.Data);
             } catch (error) {
                 console.log('error Fetching Data...', error)
             }
@@ -85,8 +83,8 @@ export default function Product() {
                             <tr key={item.id}>
                                 <td>{item.id}</td>
                                 <td>{item.title}</td>
-                                <td>Category-{item.category}</td>
-                                <td>Product</td>
+                                <td>{item.color}</td>
+                                <td>{item.price}</td>
                                 <td>{item.price}</td>
                                 <td>
                                     <i className='btn btn-info fa fa-eye'> View</i>

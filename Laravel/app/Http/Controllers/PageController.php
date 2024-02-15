@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Plant;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -17,9 +19,27 @@ class PageController extends Controller
     {
         try {
             $data = Category::orderByDesc('id')->get();
-            return response()->json(['Status'=>true,'Message'=>DATA_FETCHED,'Data'=>$data],200);
+            return response()->json(['Status' => true, 'Message' => DATA_FETCHED, 'Data' => $data], 200);
         } catch (\Throwable $th) {
-            return response()->json(['Status'=>false,'Message'=>$th],402);
+            return response()->json(['Status' => false, 'Message' => $th], 402);
+        }
+    }
+    public function getPlant()
+    {
+        try {
+            $data = Plant::orderByDesc('id')->get();
+            return response()->json(['Status' => true, 'Message' => DATA_FETCHED, 'Data' => $data], 200);
+        } catch (\Throwable $th) {
+            return response()->json(['Status' => false, 'Message' => $th], 402);
+        }
+    }
+    public function getProduct()
+    {
+        try {
+            $data = Product::orderByDesc('id')->get();
+            return response()->json(['Status' => true, 'Message' => DATA_FETCHED, 'Data' => $data], 200);
+        } catch (\Throwable $th) {
+            return response()->json(['Status' => false, 'Message' => $th], 402);
         }
     }
     // public function contertDate()
@@ -31,5 +51,5 @@ class PageController extends Controller
     //     var_dump('Convert to "YMD" : ' . $ymd);
     //     return response()->json(['Status'=>true,'Message'=>DATA_STORE]);
     // }
-    
+
 }
