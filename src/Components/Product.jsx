@@ -47,12 +47,20 @@ export default function Product() {
                             <label for="product">Product</label>
                             <select name="product" id="product" className='form-control'>
                                 <option value="">Select product</option>
+                                {data.map((item) => (
+                                    <option key={item.id} value={item.title}>
+                                        {item.title}
+                                    </option>
+                                ))}
                             </select>
                         </div>
                         <div className="col-md-2">
                             <label for="brand">Brand</label>
                             <select name="brand" id="brand" className='form-control'>
                                 <option value="">Select Brand</option>
+                                {data.map((item)=>(
+                                    <option key={item.id}value={item.brand.title}>{item.brand.title}</option>
+                                ))}
                             </select>
                         </div>
                         <div className="col-md-2">
