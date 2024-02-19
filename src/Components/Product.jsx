@@ -7,7 +7,7 @@ export default function Product() {
     useEffect(() => {
         const newData = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8000/api/product');
+                const response = await fetch('http://127.0.0.1:8000/api/product/list');
                 const responseData = await response.json();
                 setData(responseData.Data);
             } catch (error) {
