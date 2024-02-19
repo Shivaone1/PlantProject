@@ -18,7 +18,8 @@ class ProductFactory extends Factory
     {
         return [
             'title'=>fake()->name(),
-            'category'=>fake()->name(),
+            'brand_id'=>fake()->numberBetween(1,10),
+            'category_id'=>fake()->numberBetween(1,3),
             'color'=>fake()->name(),
             'size'=>fake()->numberBetween(10,100),//'price' => $faker->numberBetween(10, 100),
             'price'=>fake()->numberBetween(10,100),

@@ -38,7 +38,7 @@ Route::post('category', [PageController::class, 'getCategory']);
 Route::post('plant', [PageController::class, 'getPlant']);
 
 Route::prefix('product')->group(function () {
-    Route::post('/list', [ProductController::class, 'index']);
+    Route::get('/list', [ProductController::class, 'index']);
     Route::post('/create', [ProductController::class, 'add']);
     Route::get('/view', [ProductController::class, 'view']);  // Use GET for retrieving a resource
     Route::post('/edit', [ProductController::class, 'edit']);

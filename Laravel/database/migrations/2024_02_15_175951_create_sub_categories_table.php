@@ -15,12 +15,10 @@ return new class extends Migration
     {
         Schema::create('sub_categories', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('category_id')->nullable();
-            $table->foreign('category_id')->references('id')->on('categories');//->cascadeOnDelete();
             $table->string('title')->nullable()->default('Mens Sirt');
-            $table->timestamps();
-            // Indexing if needed
-            $table->index('category_id');
+            $table->unsignedBigInteger('sub_category_id')->nullable();
+            $table->foreign('sub_category_id')->references('id')->on('sub_categories');
+            $table->timestamps();            
         });
     }
 

@@ -44,15 +44,15 @@ export default function Product() {
                             </select>
                         </div>
                         <div className="col-md-2">
-                            <label for="category">Category</label>
-                            <select name="category" id="category" className='form-control'>
-                                <option value="">Select category</option>
-                            </select>
-                        </div>
-                        <div className="col-md-2">
                             <label for="product">Product</label>
                             <select name="product" id="product" className='form-control'>
                                 <option value="">Select product</option>
+                            </select>
+                        </div>
+                        <div className="col-md-2">
+                            <label for="brand">Brand</label>
+                            <select name="brand" id="brand" className='form-control'>
+                                <option value="">Select Brand</option>
                             </select>
                         </div>
                         <div className="col-md-2">
@@ -72,8 +72,9 @@ export default function Product() {
                         <tr>
                             <th>#</th>
                             <th>Title</th>
+                            <th>Brand</th>
                             <th>Category</th>
-                            <th>Product</th>
+                            <th>Color</th>
                             <th>Price</th>
                             <th>Action</th>
                         </tr>
@@ -83,6 +84,8 @@ export default function Product() {
                             <tr key={item.id}>
                                 <td>{item.id}</td>
                                 <td>{item.title}</td>
+                                <td>{item.brand.title}</td>
+                                <td>{item.category.title}</td>
                                 <td>{item.color}</td>
                                 <td>{item.price}</td>
                                 <td>{item.price}</td>

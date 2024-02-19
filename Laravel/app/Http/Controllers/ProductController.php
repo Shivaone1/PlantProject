@@ -13,7 +13,7 @@ class ProductController extends Controller
     public function index()
     {
         try {
-            $data = Product::orderByDesc('id')->get();
+            $data = Product::orderByDesc('id')->with('category', 'brand')->get();
             return response()->json(['Status' => true, 'Message' => DATA_FETCHED, 'Data' => $data], 200);
         } catch (\Throwable $th) {
             return response()->json(['Status' => false, 'Message' => $th], 402);
@@ -32,16 +32,16 @@ class ProductController extends Controller
         try {
             $keyword=$Request->keyword;
             $products = Product::where('title', 'like', "%$keyword%")
-                // ->orWhereHas('category', function ($query) use ($keyword) {
-                //     $query->where('title', 'like', "%$keyword%");
+                ->orWhereHas('brand', function ($query) use ($keyword) {
+                    $query->where('title', 'like', "%$keyword%");
+                })
+                // ->orWhereHas('categories', function ($query) use ($keyword) {
+                //     $query->where('category_id', 'like', "%$keyword%");
                 // })
                 // ->orWhereHas('subCategory', function ($query) use ($keyword) {
                 //     $query->where('title', 'like', "%$keyword%");
                 // })
-                // ->orWhereHas('brand', function ($query) use ($keyword) {
-                //     $query->where('title', 'like', "%$keyword%");
-                // })
-                ->get();
+                ->first();
             return responseStatus($products,true,SEARCHED,200);
         } catch (\Throwable $th) {
             return responseStatus('',false,$th,301);
