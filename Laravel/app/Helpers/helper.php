@@ -25,13 +25,13 @@ function deleteImg($path)
     return 'Ok';
 }
 
-function responseData($data = '', $success = false, $message = "", $status = 201, $metadata = [])
+function responseStatus($data = '', $success = false, $message = "", $status = 201, $metadata = [])
 {
     $response['success'] = $success;
     $response['status'] = $status;
     $response['message'] = $message;
     $response['data'] = $data;
-    $response['metadata'] = $metadata;
+    // $response['metadata'] = $metadata;
     return response()->json($response, $response['status']);
 }
 // function responseData($data = '', $success = false, $message = "", $status = 201, $headers = [])

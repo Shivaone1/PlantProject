@@ -6,8 +6,10 @@ git branch -M main
 git remote add origin https://github.com/Shivaone1/PlantProject.git
 git push -u origin main
 ---------------------------
-php artisan serve --host=192.168.0.3:8000
+php artisan serve --host=192.168.0.3:8000  
 ------------------------------------------------
+cmopser dump-autoload
+---------------------------------------
 remote: Resolving deltas: 100% (29/29), done.
 To https://github.com/Shivaone1/PlantProject.git
  * [new branch]      main -> main
